@@ -5,10 +5,9 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  Touchable,
+  Alert,
 } from 'react-native';
 import {Camera, useCameraDevices} from 'react-native-vision-camera';
-import RNFetchBlob from 'rn-fetch-blob';
 
 const PhotoScreen = () => {
   useEffect(() => {
@@ -31,10 +30,8 @@ const PhotoScreen = () => {
     const photoData = await camera?.current?.takePhoto({
       flash: 'on',
     });
-    const path = `${RNFetchBlob.fs.dirs.CacheDir}/text.png`;
-    console.log('photoData: ', path);
+    Alert.alert('photoData', photoData.path);
     try {
-      RNFetchBlob.fs.writeFile(path, photoData.path);
     } catch (er) {
       console.log(er);
     }
@@ -49,12 +46,7 @@ const PhotoScreen = () => {
   };
   const devices = useCameraDevices();
   const device = devices.back;
-  if (device == null)
-    return (
-      <View>
-        <Text>ggg</Text>
-      </View>
-    );
+  if (device == null) return <View></View>;
 
   return (
     <View style={styles.container}>
@@ -66,13 +58,20 @@ const PhotoScreen = () => {
         photo={true}
       />
 
-      <TouchableOpacity onPress={() => photo()}>
+      <TouchableOpacity
+        onPress={() => photo()}
+        style={{
+          backgroundColor: '#AD40AF',
+          padding: 20,
+          borderRadius: 10,
+          marginBottom: 30,
+        }}>
         <Text>Photo</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => snapshot()}>
+      {/*   <TouchableOpacity onPress={() => snapshot()}>
         <Text>Snap</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

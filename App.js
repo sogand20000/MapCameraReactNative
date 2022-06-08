@@ -1,8 +1,12 @@
 import React from 'react';
-import PhotoScreen from './src/Screen/PhotoScreen';
-/* import MapScreen from './src/Screen/MapScreen';
- */
+import {NavigationContainer} from '@react-navigation/native';
+import Tabs from './src/navigation/Tabs';
+
 const App = () => {
-  return <PhotoScreen></PhotoScreen>;
+  return (
+    <NavigationContainer>
+      <Tabs></Tabs>
+    </NavigationContainer>
+  );
 };
 export default App;
