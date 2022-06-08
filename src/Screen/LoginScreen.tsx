@@ -1,9 +1,16 @@
 import React from 'react';
-import {Text, SafeAreaView, View, Alert} from 'react-native';
+import {
+  Text,
+  SafeAreaView,
+  View,
+  Alert,
+  Image,
+  ImageBackground,
+} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CustomButton from '../components/CustomButton';
-/* import LoginSVG from './../../assets/images/login.svg';
- */ import InputField from './../components/InputField';
+import LoginPng from './../../assets/images/login.png';
+import InputField from './../components/InputField';
 import {JSHash, CONSTANTS} from 'react-native-hash';
 
 const LoginScreen = ({navigation}: any) => {
@@ -14,16 +21,19 @@ const LoginScreen = ({navigation}: any) => {
       })
       .catch(e => console.log(e));
   };
+
   return (
     <SafeAreaView style={{flex: 1, justifyContent: 'center'}}>
       <View style={{paddingHorizontal: 25}}>
         <View style={{alignItems: 'center'}}>
-          {/*  <LoginSVG
-            width="300"
-            height="300"
+          <Image
+            source={require('./../../assets/images/login.png')}
             style={{
+              height: 150,
+              width: 300,
               transform: [{rotate: '-5deg'}],
-            }}></LoginSVG> */}
+            }}
+          />
         </View>
         <Text
           style={{
@@ -48,7 +58,7 @@ const LoginScreen = ({navigation}: any) => {
           fieldButtonLabel={'Forgot?'}
           fieldButtonFunction={() => {}}
           inputType="password"
-          keyboardType="string"
+          keyboardType="default"
         />
         <InputField
           lable={'Password'}
@@ -61,7 +71,7 @@ const LoginScreen = ({navigation}: any) => {
             />
           }
           inputType="visible-password"
-          keyboardType="string"
+          keyboardType="default"
           fieldButtonLabel={'Forgot?'}
           fieldButtonFunction={() => {}}
         />
