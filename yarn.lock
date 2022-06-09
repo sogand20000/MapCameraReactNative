@@ -5647,7 +5647,7 @@ react-native-hash@^2.0.3:
   resolved "https://registry.yarnpkg.com/react-native-hash/-/react-native-hash-2.0.3.tgz#ac8ef3cc558e30b41621d0a8f7e08bb7c7118b97"
   integrity sha512-yzxB6+VcRAtSh2/4Q2HUQmwivF5g9mKZJPpXsaJZ2cJ/ak5+e0GIwztDC2Al/SzZArVgcP2A5gBJLxKH8Tv0+Q==
 
-react-native-maps@0.31.1:
+react-native-maps@^0.31.1:
   version "0.31.1"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.31.1.tgz#574be035a52287e3ab1c1da35e2ce3e2116f0fd6"
   integrity sha512-vipeOPykqLRMCLcLUCZEB+cTdNSlq88NLb0jChY4UGTY5fgOS7GYWkfswy6bW1ayTRLxJS3zpMGFDUY59/ZrXA==
